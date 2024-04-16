@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "name":" Vincent Chase Polarized",
+        "price": 1200,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//v/i/vincent-chase-vc-s16558-c2-sunglasses_img_9684_29_dec23.jpg"
+    },
+    {
+        "id": 2,
+        "name":" Vincent Chase",
+        "price": 1250,
+        "image": "https://tse2.mm.bing.net/th?id=OIP.zL8GiE40WfAQY2_9p6rVuQHaD5&pid=Api&P=0&h=180"
+    },
+    {
+        "id": 3,
+        "name":" AirFlex",
+        "price": 890,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//v/i/vincent-chase-vc-e13634-ful-ram-ale-metl-stlbr-c1-eyeglasaas_g_4921.jpg"
+    },
+    {
+        "id": 4,
+        "name":" Cricket Boost",
+        "price": 500,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//l/i/matte-blue-yellow-mirror-half-rim-wayfarer-sports-blue-billion-lenskart-boost-lkb-s16582-c1-sunglasses_csvfile-1699613926922-g_1185.jpg"
+    },
+    {
+        "id": 5,
+        "name":" TagHeuer",
+        "price": 1300,
+        "image": "https://tse4.mm.bing.net/th?id=OIP.wVpV772RObLwbxVjcMkpkAHaE7&pid=Api&P=0&h=180"
+    },
+    {
+        "id": 6,
+        "name":" Hooper Pink",
+        "price": 3999,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//h/i/hooper-hp-e14910s-c2-eyeglasses_g_4680_01_11_2022.jpg"
+    },
+    {
+        "id": 7,
+        "name":" Hooper Ultra",
+        "price": 1999,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//h/i/hooper-hp-s14906l-c3-sunglasses_g_1692_15_06_2022.jpg"
+    },
+    {
+        "id": 8,
+        "name":" Hooper classic",
+        "price": 1450,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//h/i/kids-glasses:-black-sky-blue-full-rim-square-kids-(5-8-yrs)-hooper-poppin-hooper-hp-e10028m-c6_g_9137_4_5_22.jpg"
+    },
+    {
+        "id": 9,
+        "name":"Hustlr",
+        "price": 799,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//l/e/lenskart-air-la-e11412-n-fall-rim-rectgle-c-on-c5-eyeglasses_eyeglasses_g_3057_1.jpg"
+    },
+    {
+        "id": 10,
+        "name":" Gunmetal",
+        "price": 599,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//l/e/lenskart-air-la-e11824-fall-rim-hexagonal-tr90-c1-eyeglasses_lenskart-air-la-e11824-fall-rim-hexagonal-tr90-c1-eyeglasses_g_7260_1.jpg"
+    },
+    {
+        "id":11,
+        "name":" Hexagonal",
+        "price": 999,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//l/i/lenskart-lk-e16583af-c2-eyeglasses_img_8803_27_12_2023.jpg"
+    },
+    {
+        "id": 12,
+        "name":" Hooper kids",
+        "price": 1200,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//l/i/peyush-bansal-shark-tank-yellow-transparent-full-rim-square-lenskart-air-air-classic-la-e15417-c2-eyeglasses_csvfile-1671795559588-g_6043(3).jpg"
+    },
+    {
+        "id": 13,
+        "name":" SteelSleek",
+        "price": 1500,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//model/j/i/gunmetal-black-rimless-rectangle-john-jacobs-pro-titanium-jj-e10640-c2-eyeglasses_25_feb_female_shoot44468_12160004_03_2022.jpg"
+    },
+    {
+        "id": 14,
+        "name":" John Jacob",
+        "price": 2000,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//j/i/silver-pink-full-rim-cat-eye-john-jacobs-jj-tints-jj-s14428-c1-sunglasses_g_1873_23_05_2022.jpg"
+    },
+    {
+        "id": 15,
+        "name":" NightRider",
+        "price": 600,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//model/v/i/yellow-black-full-rim-rectangle--square-vincent-chase-night-riding-glasses-vc-s16955-c1-sunglasses_21_march_m_f_shoot403746_22_03_2024.jpg"
+    },
+    {
+        "id": 16,
+        "name":" Hooper Ultra",
+        "price": 1500,
+        "image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//l/i/dark-grey-full-rim-hustlr-lenskart-air-classic-la-e15417-c20-eyeglasses_csvfile-1675942640571-g_3295.jpg"
+    }
+    
+
+]

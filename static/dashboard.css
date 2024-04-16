@@ -1,0 +1,92 @@
+#mainHead {
+
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    height: 80px;
+
+    background-image: url("data:image/jpeg;base64,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");
+
+  }
+ 
+
+  #mainHead:hover {
+    transform: scale(1.25);
+    text-shadow: 3px 2px white;
+    color: #ee2c0a;
+    transition: 1.5s;
+  }
+
+  nav {
+    background-color: black;
+    list-style-type: none;
+    text-align: center;
+
+    padding: 0;
+    margin-left: -910px;
+    display: flex;
+  }
+
+  nav li {
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: azure;
+    text-decoration: solid;
+    font-size: 20px;
+    padding: 20px;
+    text-shadow: 3px 3px #e8339a;
+
+  }
+  nav li a{
+    text-decoration: none;
+    color: white;
+  }
+  nav li a:hover {
+    color: white !important;
+}
+
+  nav li:hover {
+    color: yellow;
+    transform: scale(1.25);
+
+  }
+  .search-icon {
+    color: white;
+}
+
+#search {
+    margin-top: 20px;
+    margin-left: 20px; /* Adjust this value as needed */
+    display: inline-block;
+    vertical-align: middle; /* Ensure vertical alignment with other elements */
+}
+#signoutBTN{
+    text-decoration: none;
+    text-shadow: none;
+    color: white;
+    
+}
+.Lenscard {
+    margin-left: 100px;
+    display: flex;
+    gap: 20px;
+    margin-top: 20px
+  }
+
+  .card {
+    margin-left: 20px;
+    flex: 1 0 300px;
+    /* Flex item properties: grow, shrink, basis */
+    max-width: 18rem;
+    box-shadow: 3px 2px black;
+  }
+  #Subhead{
+    background: linear-gradient(to bottom, #003366 35%, #0000ff 100%);
+    height: 70px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Agbalumo', sans-serif;
+    font-size: 30px;
+  }
