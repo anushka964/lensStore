@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LensStore</title>
+  <link rel="icon" type="image/x-icon" href="https://static.lenskart.com/media/mobile/images/lenskart_icon_512X512.png">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ 
+
+  <script>
+    
+
+    function sumbit() {
+      var password = document.getElementById("password").value;
+      if (password === "") {
+        alert("Please enter your password");
+      } else {
+        var f = confirm("Are you sure you want to submit your details ?");
+        if (f == true) {
+          alert("Your details submitted succesfully!");
+        }
+        else {
+          alert("Form not submitted");
+        }
+      }
+    }
+
+
+
+    function redirectToSite() {
+      var searchQuery = documnet.getElementById("seachInput").value;
+      var url = "https://www.lenskart.com" + encodeURIComponent(searchQuery);
+      window.location.href = url;
+      return false;
+    }
+
+    const images = ['https://tse3.mm.bing.net/th?id=OIP.j9dHPK1MSzhHYUHQ7dyCcQHaEo&pid=Api&P=0&h=180 ', 'https://tse4.mm.bing.net/th?id=OIP.h4tgW4FE1gkqeopu4zbrQgHaEo&pid=Api&P=0&h=180']; // List of rotating images
+    let currentIndex = 0;
+    
+
+    // changes made by nitin ----- start ---
+    function rotateImage() {
+      const rotatingImage = document.querySelector('.rotating-image');
+      // console.log("start function rotation img 1");
+      rotatingImage.style.transform = 'translateX(-100%)'; // Slide out the current image
+      setTimeout(() => {
+      
+      currentIndex = (currentIndex + 1) % images.length; // Get next image index  
+      rotatingImage.src = images[currentIndex]; // Update the image src
+      rotatingImage.style.transform = 'translateX(0)'; // Slide in the new image
+      }, 1000); 
+    }
+    // Start rotating images
+    setInterval(rotateImage, 3000); // Change image every 5 seconds
+      // changes made by nitin ---- end --- for rotation img 1
+
+
+    const rotatingImages2 = ['https://tse2.mm.bing.net/th?id=OIP.QJLMpBTG5MTQh6syqwen4QHaEK&pid=Api&P=0&h=180 ', 'https://tse1.mm.bing.net/th?id=OIP.XMNZVHj-uPoE8u87XMxgMQHaEK&pid=Api&P=0&h=180']; // List of rotating images
+    let currentIndex2 = 0;
+    
+
+    function rotateImage2() {
+    const rotatingImageElement2 = document.querySelector('.rotating-image-2');
+
+      rotatingImageElement2.style.transform = 'translateX(-100%)'; // Slide out the current image
+      setTimeout(() => {
+        currentIndex2 = (currentIndex2 + 1) % rotatingImages2.length; // Get next image index
+        rotatingImageElement2.src = rotatingImages2[currentIndex2]; // Update the image src
+        rotatingImageElement2.style.transform = 'translateX(0)'; // Slide in the new image
+      }, 1000); // Adjust transition duration + delay as needed
+    }
+
+    // Start rotating images
+    setInterval(rotateImage2, 1000); // Change image every 5 seconds
+
+    function save_form() {
+    let username = $('#username').val();
+    let password = $('#password').val();
+    
+    if (username !== "" && password !== "") {
+        $.ajax({
+            type: 'POST',
+            url: '/LensStore',
+            data: { username: username, password: password },
+            success: function(response) {
+                // Assuming the Flask route returns {'msg': 'success_message'}
+                alert(response['msg']);
+                window.location.href = "/dashboard";
+            },
+            error: function(xhr, status, error) {
+                // Handle error response
+                console.log(xhr.responseJSON.error);
+                alert("Error: " + xhr.responseJSON.error);
+            }
+        });
+    } else {
+        alert("Invalid username or password");
+    }
+}
+
+
+  </script>
+</head>
+
+<body>
+  
+  
+    <nav>
+      <li><img src="static/logo.jpg" alt="Girl in a jacket" width="60" height="30"></li>
+      <li><a href ="{{url_for('login')}}">Login</a></li>
+      <li>About</li>
+      <li>Trendy Frames</li>
+      <li><i class="bi bi-cart"></i></li>
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search" id="search"> <i class="bi bi-search search-icon"></i>
+
+      </form>
+    </nav>
+
+    <h1 id="mainHead">&#128526; Welcome To Lens Store! &#128526; </h1>
+    <hr>
+    <div class="front-image">
+      <div class="front-text">
+        <h2 style="font-size:50px">Buy Your Favourite Frames<br />At Exclusive Price</h2>
+
+      </div>
+    </div>
+
+    </div>
+
+    <br />
+
+
+    <div class="container">
+      <h1 class="text-center" id="Subhead">Choose from widest range of eyewear</h1>
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100"
+              src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/f9ea87bc-6f5d-450f-b814-870153fe8382.__CR0,0,970,600_PT0_SX970_V1___.jpg"
+              alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100"
+              src="https://tse3.mm.bing.net/th?id=OIP.hr-VVVrrgcBU2DUqxPduJAHaED&pid=Api&P=0&h=180" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100"
+              src="https://tse4.mm.bing.net/th?id=OIP.8LVCnkwygbRgO2GwqYnJZwHaEK&pid=Api&P=0&h=180" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://i.ytimg.com/vi/vBn1ui1xrrU/maxresdefault.jpg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" id="katrina"
+              src="https://tse4.mm.bing.net/th?id=OIP.UZIjKmvNrYI3r7Nsx_sAQAHaEK&pid=Api&P=0&h=180" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+
+
+<!-- Bootstrap JS and jQuery
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
+
+
+<div class="login-container mt-5">
+  <div class="card login-form">
+    <div class="card-body">
+      <h5 class="card-title">SignUp</h5>
+      <form id="loginForm" onsubmit="return sumbit()">
+        <div class="form-group">
+          <label for="username">Email ID</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password">
+        </div>
+        
+        
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Remember me</label>
+        </div>
+        <div class="form-group">
+          <label>Be our gold member:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="membership" id="goldMember" value="gold">
+            <label class="form-check-label" for="goldMember">Gold Member</label>
+          </div>
+          
+        </div>
+       <a href="{{url_for('login')}}">Already have an account? Log In</a>
+       <br> 
+        <button onclick="save_form()" type="button" class="btn btn-primary">SignUp</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<br>
+
+
+<div class="Img-1">
+  <img src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/stores.jpg" class="img-fluid"
+    alt="Responsive image">
+</div>
+
+<div class="Img-3">
+  <img src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/hto.jpg" class="img-fluid"
+    alt="Responsive image">
+</div>
+
+
+<div class="Img-2">
+  <img src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/call1800.jpg" class="img-fluid"
+    alt="Responsive image">
+</div>
+<br />
+
+<div class="pic-Heads">
+  <h1><span>OUR BRANDS</span></h1>
+</div>
+<img id=vincent src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/VC-Banner.jpg"><br />
+
+<img id=vincent src="https://static1.lenskart.com/media/desktop/img/Nov20/25-Nov/Banner05_Final2ndDec21.jpg">
+<br />
+<img id=vincent src="https://static1.lenskart.com/media/desktop/img/Nov22/Updated%20brand%20banner%20jj%20.jpg">
+
+
+<br />
+
+<div class="pic-Heads">
+  <h1><span>Find Your Perfect Fit</span></h1>
+</div>
+<br />
+<!-- Gallery -->
+<div class="collage">
+  <div class="row">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <img src="https://tse3.mm.bing.net/th?id=OIP.KBNDXdxK1lbwUeSX_wR9eAHaE8&pid=Api&P=0&h=180"
+        class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+
+      <img src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/ce-square.jpg"
+        class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+    </div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img id="SUNGLASSES" src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/sun-square.jpg"
+        class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+
+      <img id="Power" src="https://static1.lenskart.com/media/desktop/img/Aug21/Desktop/power-sun-square.jpg"
+        class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+    </div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0">
+
+      <img id="DIGI" src="https://static1.lenskart.com/media/desktop/img/Nov20/25-Nov/Banner03_TileDesktop.jpg"
+        class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+      <img id="contact" src="https://static1.lenskart.com/media/desktop/img/June22/contact-lens-more.jpg"
+        class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+    </div>
+  </div>
+</div>
+<!-- Gallery -->
+
+<div class="pic-Heads">
+  <h1><span>Eye Glasses</span></h1>
+</div>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img class="d-block w-100"
+        src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//h/i/blue-block-phone-&-computer-glasses:-blue-full-rim-rectangle-kids-(5-8-yrs)-hooper-hp-d10008m-c1_g_3411_5_27_22.jpg"
+        alt="First slide">
+    </div>
+    <div class="carousel-item" data-bs-interval="10000">
+      <img id="sun2" class="d-block w-100"
+        src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//h/i/blue-block-phone-&-computer-glasses:-pink-full-rim-cat-eye-kids-(8-12-yrs)-hooper-hp-d10042l-c2_g_3713_5_30_22.jpg"
+        alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img id="sun3" class="d-block w-100"
+        src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/371x178/9df78eab33525d08d6e5fb8d27136e95//h/i/kids-glasses:-black-multicolour-full-rim-rectangle-kids-5-8-yrs-hooper-superhero-lk-d16257-c1_img_4077_29_11_2023.jpg"
+        alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="pic-Heads">
+  <h1><span>OJOS</span></h1>
+</div>
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+<!--CHANGING BANNER-->
+<div class="banner-container">
+  <div class="text-container">
+    <h2 id="Cool">Cool.Quirky,Crazy!<br />
+      <h3 id="Game">Let's Elevate Your Frame Game<br /><br /><b>Starting At &#8377;1199</b></h3>
+    </h2>
+    <p id="Shop">Shop Now</p>
+  </div>
+  <div class="image-container">
+    <img class="rotating-image" src="https://tse3.mm.bing.net/th?id=OIP.j9dHPK1MSzhHYUHQ7dyCcQHaEo&pid=Api&P=0&h=180"
+      alt="Rotating Image">
+  </div>
+</div>
+
+
+<br />
+<div class="pic-Heads">
+  <h1><span>AQUACOLOR - GLAM UP WITH COLOR LENSES
+    </span></h1>
+</div>
+<br />
+<img id=vincent src="https://static1.lenskart.com/media/desktop/img/June22/Our-Brands-Banner.jpg">
+<br />
+
+
+<!--CHANGING BANNER-->
+<div class="banner-container-2">
+  <div class="text-container-2">
+    <h2 id="Cool">As Seen On<br />
+      <h3 id="Game">Karan Johar<br /><br /><b>Starting At &#8377;999</b></h3>
+    </h2>
+    <p id="Karan">Shop Now</p>
+  </div>
+  <div class="image-container-2">
+    <img class="rotating-image-2" src="https://tse2.mm.bing.net/th?id=OIP.QJLMpBTG5MTQh6syqwen4QHaEK&pid=Api&P=0&h=180"
+      alt="Rotating Image">
+  </div>
+</div>
+<br />
+<br />
+<div class="pic-Heads">
+  <h1><span>INTRODUCING OJOS WEAR - SUBSCRIBE & SAVE
+    </span></h1>
+</div>
+<br />
+<img id=vincent src="https://static1.lenskart.com/media/desktop/img/May22/ojos-web.jpg">
+<br />
+
+<br />
+<div class="footer">
+  <h2>Buy The Best Eyewear From LensStore</h2>
+  <p>A One-Stop Online Solution For Purchasing Eyewear And Its Accessories, LensStore Delivers Them Right At Your
+    Doorstep With Convenient Methods Of Payment. Sunglasses as well as Eyeglasses Are Available For Men And Women In A
+    Diverse Array Of Styles And Trendy Colours. If You Want To Try Out Contact Lenses, Pick The Ones Of Your Choice From
+    The Extensive Variety Of Coloured Contact Lenses From Our Online Store.
+  </p>
+
+</div>
+<br />
+<a href="https://www.lenskart.com/">Open new website</a><br /><br />
+</body>
+
+</html>
